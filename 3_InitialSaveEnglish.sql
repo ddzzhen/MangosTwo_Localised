@@ -8,7 +8,7 @@ UPDATE `creature_ai_texts`
 SET `content_loc0` = `content_default`;
 
 -- 3/13
-UPDATE `db_script_string`
+UPDATE `dbscript_string`
 SET `content_loc0` = `content_default`;
 
 -- 4/13

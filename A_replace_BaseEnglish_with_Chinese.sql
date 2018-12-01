@@ -16,7 +16,7 @@ UPDATE `creature_ai_texts`
 SET `content_default` = `content_loc4` where `content_loc4` is not null ;
 
 -- 3/13
-UPDATE `dbscript_string`
+UPDATE `db_script_string`
 SET `content_default` = `content_loc4` where `content_loc4` is not null ;
 
 -- 4/13

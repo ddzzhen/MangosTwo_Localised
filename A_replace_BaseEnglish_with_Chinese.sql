@@ -13,20 +13,20 @@ SET creature_template.`Name`=`locales_creature`.`name_loc4`,creature_template.`s
 
 -- 2/13
 UPDATE `creature_ai_texts`
-SET `content_default` = `content_loc4`;
+SET `content_default` = `content_loc4` where `content_loc4` is not null ;
 
 -- 3/13
-UPDATE `db_script_string`
-SET `content_default` = `content_loc4` ;
+UPDATE `dbscript_string`
+SET `content_default` = `content_loc4` where `content_loc4` is not null ;
 
 -- 4/13
 UPDATE `gameobject_template`
 INNER JOIN `locales_gameobject` ON `gameobject_template`.`entry` = `locales_gameobject`.`Entry`
-SET gameobject_template.`Name` = `locales_gameobject`.`name_loc4`;
+SET gameobject_template.`Name` = `locales_gameobject`.`name_loc4`  where `locales_gameobject`.`name_loc4` is not null ;
 
 -- 5/13
 UPDATE `gossip_texts`
-SET `content_default` = `content_loc4` ;
+SET `content_default` = `content_loc4` where `content_loc4` is not null ;
 
 -- 6/13
 UPDATE `gossip_menu_option`
@@ -40,7 +40,7 @@ SET item_template.`Name`=`locales_item`.`name_loc4`,item_template.`description`=
  
 -- 8/13 
 UPDATE `mangos_string`
-SET `content_default` = `content_loc4` ; 
+SET `content_default` = `content_loc4` where `content_loc4` is not null ; 
 
 -- 9/13
 UPDATE `page_text`
@@ -68,7 +68,7 @@ SET quest_template.`Title`=`locales_quest`.`Title_loc4`,
 
 -- 12/13
 UPDATE `script_texts`
-SET `content_default` = `content_loc4`;
+SET `content_default` = `content_loc4` where `content_loc4` is not null ;
 
 -- 13/13
 UPDATE `npc_text`

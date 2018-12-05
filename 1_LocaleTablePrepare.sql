@@ -26,4 +26,4 @@ INSERT INTO `locales_points_of_interest` (`entry`) SELECT `entry` FROM `points_o
 INSERT INTO `locales_quest` (`entry`) SELECT `entry` FROM `quest_template` WHERE `entry` NOT IN (SELECT `entry` FROM `locales_quest`);
 
 -- Create the db_script_string entries from main table
-INSERT INTO `db_script_string` (`entry`) SELECT `entry` FROM `dbscript_string` WHERE `entry` NOT IN (SELECT `entry` FROM `db_script_string`);
+INSERT INTO `db_script_string` (`entry`,`content_default`) SELECT `entry`,`content_default` FROM `dbscript_string` WHERE `entry` NOT IN (SELECT `entry` FROM `db_script_string`);

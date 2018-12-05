@@ -9,7 +9,8 @@ SET `content_loc0` = `content_default`;
 
 -- 3/13
 UPDATE `db_script_string`
-SET `content_loc0` = `content_default`;
+INNER JOIN `dbscript_string` ON `db_script_string`.`Entry` = `dbscript_string`.`Entry`
+SET `db_script_string`.`content_loc0` = `dbscript_string`.`content_default`;
 
 -- 4/13
 UPDATE `locales_gameobject`

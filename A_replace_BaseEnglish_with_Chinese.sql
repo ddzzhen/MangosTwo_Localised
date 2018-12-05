@@ -16,8 +16,9 @@ UPDATE `creature_ai_texts`
 SET `content_default` = `content_loc4` where `content_loc4` is not null ;
 
 -- 3/13
-UPDATE `db_script_string`
-SET `content_default` = `content_loc4` where `content_loc4` is not null ;
+UPDATE `dbscript_string`
+INNER JOIN `db_script_string` on `dbscript_string`.`entry` = `db_script_string`.`entry`
+SET `dbscript_string`.`content_default` = `db_script_string`.`content_loc4` where `db_script_string`.`content_loc4` is not null ;
 
 -- 4/13
 UPDATE `gameobject_template`

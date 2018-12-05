@@ -32,7 +32,7 @@ SET `content_default` = `content_loc4` where `content_loc4` is not null ;
 -- 6/13
 UPDATE `gossip_menu_option`
 INNER JOIN `locales_gossip_menu_option` ON gossip_menu_option.`menu_id`=`locales_gossip_menu_option`.`menu_id` AND gossip_menu_option.`id`=`locales_gossip_menu_option`.`id`
-SET gossip_menu_option.`option_text`=`locales_gossip_menu_option`.`option_text_loc4` where `locales_gossip_menu_option`.`option_text_loc4` is not null, gossip_menu_option.`box_text`=`locales_gossip_menu_option`.`box_text_loc4` where `locales_gossip_menu_option`.`box_text_loc4` is not null;
+SET gossip_menu_option.`option_text`=COALESCE(`locales_gossip_menu_option`.`option_text_loc4`,`locales_gossip_menu_option`.`option_text_loc0`,''), gossip_menu_option.`box_text`=COALESCE(`locales_gossip_menu_option`.`box_text_loc4`,`locales_gossip_menu_option`.`box_text_loc0`,'');
 
 -- 7/13
 UPDATE `item_template`
